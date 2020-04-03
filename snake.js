@@ -42,6 +42,23 @@ let startTime;
 window.onresize = resize;
 restartButton.onmousedown = reset;
 modeButton.onmousedown = toggleMode;
+
+// add swipe gestures
+const swipeGestures = new Hammer(game);
+swipeGestures.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+swipeGestures.on('swipeleft', function (ev) {
+  wantedDirection = currentDirection !== 'R' ? 'L' : 'R';
+});
+swipeGestures.on('swiperight', function (ev) {
+  wantedDirection = currentDirection !== 'L' ? 'R' : 'L';
+});
+swipeGestures.on('swipeup', function (ev) {
+  wantedDirection = currentDirection !== 'D' ? 'U' : 'D';
+});
+swipeGestures.on('swipedown', function (ev) {
+  wantedDirection = currentDirection !== 'U' ? 'D' : 'U';
+});
+
 document.onkeydown = event => {
   if (event.keyCode === 37) wantedDirection = currentDirection !== 'R' ? 'L' : 'R';
   if (event.keyCode === 38) wantedDirection = currentDirection !== 'D' ? 'U' : 'D';
@@ -49,6 +66,11 @@ document.onkeydown = event => {
   if (event.keyCode === 40) wantedDirection = currentDirection !== 'U' ? 'D' : 'U';
 
   if (event.keyCode === 82) reset();
+}
+
+function changeDirection() {
+  wantedDirection = POSSIBLE_DIRECTIONS[randomIntFromInterval(0, 3)];
+  console.log(wantedDirection);
 }
 
 build();
@@ -76,6 +98,8 @@ function reset() {
   });
 
   score.innerHTML = 'score <em>' + currentScore + '</em>';
+  currentDirection = 'R';
+  wantedDirection = 'R';
 }
 
 function randomIntFromInterval(min, max) { // min and max included 
@@ -237,8 +261,6 @@ function placeRandomFood() {
   while (isPartOfSnake(randomRow, randomPos)) {
     getRandomValues();
   }
-
-  console.log({ randomRow, randomPos })
 
   // mark checkbox for food
   rows[randomRow][randomPos].checked = true;
