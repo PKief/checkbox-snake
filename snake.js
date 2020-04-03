@@ -90,6 +90,8 @@ function reset() {
     currentScore,
   } = currentSettings)
 
+  currentScore = 0;
+
   addSnake({
     row: 0,
     index: Math.floor(COLUMNS / 2 - currentWidth / 2),
