@@ -70,7 +70,6 @@ document.onkeydown = event => {
 
 function changeDirection() {
   wantedDirection = POSSIBLE_DIRECTIONS[randomIntFromInterval(0, 3)];
-  console.log(wantedDirection);
 }
 
 build();
@@ -141,7 +140,7 @@ function click(event) {
 function setState(value) {
   state = value;
 
-  if (state === 'playing') status.textContent = 'press cursor keys';
+  if (state === 'playing') status.textContent = 'press cursor keys or swipe';
   else if (state === 'won') status.textContent = '🏅you rock ✌️🦄';
   else if (state === 'lost') status.textContent = 'checkmate 💥';
 
