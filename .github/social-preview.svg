@@ -1,0 +1,13 @@
+<svg width="1280mm" height="640mm" version="1.1" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(-37.835 28.8)">
+  <g transform="matrix(21.263 0 0 21.263 90.019 36.041)">
+   <path d="m10 17-5-5 1.41-1.42 3.59 3.59 7.59-7.59 1.41 1.42m0-5h-14c-1.11 0-2 0.89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-14c0-1.11-0.9-2-2-2z" fill="#536dfe"/>
+   <rect transform="rotate(-45)" x="5.784" y="17.091" width="2.0012" height="2.0012" fill="#40c4ff" stroke-linecap="square" stroke-width=".33751" style="paint-order:fill markers stroke"/>
+   <rect transform="rotate(-45)" x="1.7816" y="21.093" width="2.0012" height="2.0012" fill="#40c4ff" stroke-linecap="square" stroke-width=".33751" style="paint-order:fill markers stroke"/>
+  </g>
+  <g letter-spacing="0px" word-spacing="0px">
+   <text x="601.17877" y="234.48206" fill="#37474f" font-family="'Roboto Mono'" font-size="70.704px" stroke-width=".7365" style="line-height:1.25" xml:space="preserve"><tspan x="601.17877" y="234.48206" fill="#37474f" font-family="Roboto" font-size="70.704px" stroke-width=".7365">Checkbox Snake</tspan></text>
+   <text x="603.07098" y="326.95126" fill="#40c4ff" font-family="Roboto" font-size="56.732px" stroke-width=".8225" style="line-height:1.25" xml:space="preserve"><tspan x="603.07098" y="326.95126">Snake game with HTML </tspan><tspan x="603.07098" y="400.39212">checkboxes</tspan></text>
+  </g>
+ </g>
+</svg>
