@@ -1,15 +1,22 @@
-on: push
-name: Deploy
+name: Deployment
+on:
+  push:
+    branches:
+      - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v2
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BASE_BRANCH: master
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+        with:
+          persist-credentials: false
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
           FOLDER: src
